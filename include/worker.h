@@ -19,11 +19,11 @@ class Worker
         Worker(const char* username,DBMYSQL *m_db, int client_fd,userList *u_list);
         void start();
     private:
-        static const char *username;
-        static int client_fd;
-        static userList *u_list;
+        const char *username;
+        int client_fd;
+        userList *u_list;
+        DBMYSQL * m_db;
         pthread_t thread;
-        static DBMYSQL * m_db;
         static void *run(void* arg);
 };
 
