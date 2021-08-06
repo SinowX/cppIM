@@ -1,0 +1,694 @@
+[sinow@Arch ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  vbspace  workspace
+[sinow@Arch ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  vbspace  workspace
+[sinow@Arch ~]$ cd workspace/
+[sinow@Arch workspace]$ ls
+cpp  cpp_cmake  cpp_mysql  git  md  node  pycharm  pyc_socket  python  sql_script  starUml
+[sinow@Arch workspace]$ cd cpp
+[sinow@Arch cpp]$ ls
+IM  main  main.cc  test  test.cc  test.js  Utils
+[sinow@Arch cpp]$ cd IM/
+[sinow@Arch IM]$ ls
+bin  build  CMakeLists.txt  dustbin  include  lib  src
+[sinow@Arch IM]$ git add -A
+[sinow@Arch IM]$ bin
+bin/  bind  
+[sinow@Arch IM]$ bin
+bin/  bind  
+[sinow@Arch IM]$ bin/main 
+Diverter Socket Listening...
+Database Connect Success
+UserList Build Success
+Diverter Runing Loop
+Diverter::run_once accept() client_fd = 5
+Diverter::run_once buffersize init buffersize = 0
+Diverter::run_once read() buffersize = 47
+Diverter::run_once *buffer init @ 0x556e3f135140
+Diverter::run_once read() *buffer 47BDiverter::run_once str2json(buffer) 
+{
+	"password" : "12345",
+	"username" : "zhaoqifan"
+}
+Diverter::run_once switch to be LOGIN
+Diverter::run_once switch username=zhaoqifan, password=12345
+Geting User Now
+Diverter::run_once switch init sql = 
+select password from user where username = 'zhaoqifan'
+Diverter::run_once switch select(sql) *res @ 0x556e3f135880
+Diverter::run_once switch select(sql) *res row_num = 1
+Diverter::run_once switch user exist, try login
+Diverter::run_once switch login success
+Worker Constructor get username = zhaoqifan
+Worker start try print this->username zhaoqifan
+Diverter::run_once switch login success, thread start
+Diverter::run_once switch login success, add User to User List
+Diverter::run_once switch login success root.clear()
+Diverter::run_once switch login success root asigned
+{
+	"status" : 0,
+	"type" : 0
+}
+Worker for zhaoqifan start running
+Diverter::run_once switch login success reply = root_string.c_str()
+{
+	"status" : 0,
+	"type" : 0
+}
+Diverter::run_once switch login success strlen(reply) = 30
+Worker for zhaoqifan running loop
+Diverter::run_once switch login success write(buffersize) = 4
+Diverter::run_once switch login success write(reply) = 30
+Diverter Runing Loop
+Diverter::run_once accept() client_fd = 6
+Diverter::run_once buffersize init buffersize = 0
+Diverter::run_once read() buffersize = 43
+Diverter::run_once *buffer init @ 0x556e3f135c30
+Diverter::run_once read() *buffer 43BDiverter::run_once str2json(buffer) 
+{
+	"password" : "12345",
+	"username" : "laopo"
+}
+Diverter::run_once switch to be LOGIN
+Diverter::run_once switch username=laopo, password=12345
+Geting User Now
+Diverter::run_once switch init sql = 
+select password from user where username = 'laopo'
+Diverter::run_once switch select(sql) *res @ 0x556e3f135920
+Diverter::run_once switch select(sql) *res row_num = 1
+Diverter::run_once switch user exist, try login
+Diverter::run_once switch login success
+Worker Constructor get username = laopo
+Worker start try print this->username laopo
+Diverter::run_once switch login success, thread start
+Diverter::run_once switch login success, add User to User List
+Diverter::run_once switch login success root.clear()
+Diverter::run_once switch login success root asigned
+Worker for laopo start running
+{Worker for laopo running loop
+
+	"status" : 0,
+	"type" : 0
+}
+Diverter::run_once switch login success reply = root_string.c_str()
+{
+	"status" : 0,
+	"type" : 0
+}
+Diverter::run_once switch login success strlen(reply) = 30
+Diverter::run_once switch login success write(buffersize) = 4
+Diverter::run_once switch login success write(reply) = 30
+Diverter Runing Loop
+Worker for zhaoqifan read(buffersize) = 4
+Worker for zhaoqifan read(buffer) = 93
+Worker for zhaoqifan str2json() get root
+{
+	"content" : "hello this is for test",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"type" : 1
+}
+Worker for zhaoqifan switch P2PMSG
+Worker for zhaoqifan switch P2PMSG get sql = 
+insert into message_log(sender,receiver,content)values('zhaoqifan','laopo','hello this is for test')
+Geting User Now
+Worker for zhaoqifan switch P2PMSG write(msg) = 4
+Worker for zhaoqifan running loop
+Worker for laopo read(buffersize) = 4
+Worker for laopo read(buffer) = 82
+Worker for laopo str2json() get root
+{
+	"content" : "Ok I Got It",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"type" : 1
+}
+Worker for laopo switch P2PMSG
+Worker for laopo switch P2PMSG get sql = 
+insert into message_log(sender,receiver,content)values('laopo','zhaoqifan','Ok I Got It')
+Geting User Now
+Worker for laopo switch P2PMSG write(msg) = 4
+Worker for laopo running loop
+Worker for zhaoqifan read(buffersize) = 4
+Worker for zhaoqifan read(buffer) = 56
+Worker for zhaoqifan str2json() get root
+{
+	"person1" : "zhaoqifan",
+	"person2" : "laopo",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC
+Worker for zhaoqifan switch SYNC get sql = select sender,receiver,content,timestamp from message_log where sender='zhaoqifan' and receiver='laopo' or sender='laopo' and receiver='zhaoqifan'
+Worker for zhaoqifan switch SYNC get history row = 26
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "I love You !",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:24:41",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "I love You !",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:24:41",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 145
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "I love You !",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:24:59",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "I love You !",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:24:59",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 145
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "I love You !",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:25:13",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "I love You !",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:25:13",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 145
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "fuck you ",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:25:28",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "fuck you ",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:25:28",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 142
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "fuck you ",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:26:07",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "fuck you ",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:26:07",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 142
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "see you again",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:39:55",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "see you again",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:39:55",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 146
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "may be",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:03",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "may be",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:03",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 139
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "see you again",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:11",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "see you again",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:11",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 146
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "may be",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:16",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "may be",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:16",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 139
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "jjjjjjj",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:22",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "jjjjjjj",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:22",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 140
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "jjjjjjj\u6492\u5927\u58f0\u5730",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:26",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "jjjjjjj\u6492\u5927\u58f0\u5730",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:26",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 164
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "jashidhhaiulwhdnkwjasndkjak",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:50",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "jashidhhaiulwhdnkwjasndkjak",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:40:50",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 160
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "asdad",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:26",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "asdad",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:26",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 138
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "dnkjdnajd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:31",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "dnkjdnajd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:31",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 142
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "asdad",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:33",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "asdad",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:33",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 138
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "dnkjdnajd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:35",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "dnkjdnajd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 15:49:35",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 142
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "helllojsaidhasiud",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:09:08",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "helllojsaidhasiud",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:09:08",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 150
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "sjandiuas",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:09:19",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "sjandiuas",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:09:19",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 142
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "jiasojda",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:13:05",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "jiasojda",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:13:05",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 141
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "jiasojda",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:15:28",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "jiasojda",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:15:28",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 141
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "hello",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:17:48",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "hello",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:17:48",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 138
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "sandjkansd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:18:28",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "sandjkansd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:18:28",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 143
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "ajsids",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:42:04",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "ajsids",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:42:04",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 139
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "asdasd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:42:11",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "asdasd",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:42:11",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 139
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "hello this is for test",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:48:04",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "hello this is for test",
+	"receiver" : "laopo",
+	"sender" : "zhaoqifan",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:48:04",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 155
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC root =
+{
+	"content" : "Ok I Got It",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:48:25",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC reply =
+{
+	"content" : "Ok I Got It",
+	"receiver" : "zhaoqifan",
+	"sender" : "laopo",
+	"status" : 0,
+	"timestamp" : "2021-08-06 16:48:25",
+	"type" : 3
+}
+Worker for zhaoqifan switch SYNC strlen(reply) = 144
+Worker for zhaoqifan switch SYNC write(buffersize) = 4
+Worker for zhaoqifan switch SYNC write(reply) = 4
+Worker for zhaoqifan switch SYNC free(res)
+Worker for zhaoqifan running loop
+Worker for zhaoqifan Closed
+Worker for laopo Closed
+^C
+[sinow@Arch IM]$ 

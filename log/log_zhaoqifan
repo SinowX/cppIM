@@ -1,0 +1,412 @@
+[sinow@Arch ~]$ cd workspace/
+[sinow@Arch workspace]$ cd py
+pycharm/    pyc_socket/ python/     
+[sinow@Arch workspace]$ cd py
+pycharm/    pyc_socket/ python/     
+[sinow@Arch workspace]$ cd pycharm/
+IMfront/       pythonProject/ 
+[sinow@Arch workspace]$ cd pycharm/IMfront/
+[sinow@Arch IMfront]$ ls
+building.py   Definition.py  main.py      test
+Connector.py  EventFunc.py   __pycache__  UI
+[sinow@Arch IMfront]$ term
+[sinow@Arch IMfront]$ python main.py 
+_IceTransOpen: Unable to Parse address i3
+Qt: Session management error: Could not open network socket
+Receiver Thread init
+Receiver Thread init over
+MainThread init over
+MainThread running
+Login Btn Triggered
+trying lock login_mutex
+Login tcp connectServer
+Login Thread init
+Login Thread init over
+Login Thread running
+Login Thread login_info(bytes):
+b'{"username": "zhaoqifan", "password": "12345"}\x00'
+Login Thread login_info_size: c_uint(47)
+Login Thread Sent size and info
+Login Thread Get buffersize b'\x1e\x00\x00\x00'
+Login Thread recv buffersize : 30
+b'{\n\t"status" : 0,\n\t"type" : 0\n}'
+Login Thread get res:
+{
+	"status" : 0,
+	"type" : 0
+}
+Login Thread get res2: 
+{'status': 0, 'type': 0}
+Login Thread Success
+Login Thread Wake login_condi
+Login condi awaked
+Login Success
+Lui login btn disconnect()
+Lui hide()
+username =  zhaoqifan
+CUI show()
+login mutex unlock()
+ReceiveThread start
+MainThread Send Btn Triggered
+MainTread Send mutex trylock()
+MainTread SendMsg pack msg :
+{'type': 1, 'sender': 'zhaoqifan', 'receiver': 'laopo', 'content': 'hello this is for test'}
+SendThread init
+SendThread init over
+SendThread send_msg = 
+b'{"type": 1, "sender": "zhaoqifan", "receiver": "laopo", "content": "hello this is for test"}\x00'
+SendThread Msg has Sent
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread buffersize =  81
+ReceiveThread get buffer res:
+{'type': 1, 'sender': 'laopo', 'receiver': 'zhaoqifan', 'content': 'Ok I Got It'}
+ReceiveThread get a P2PMSG
+ReceiveThread P2PMSG from  laopo
+ReceiveThread get newhistory :
+laopo 2021-08-06 16:48:25
+  Ok I Got It
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+History Btn Triggered
+ReceiveThread buffersize =  145
+ReceiveThread get buffer res:
+{'content': 'I love You !', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:24:41', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:24:41
+  I love You !
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  145
+ReceiveThread get buffer res:
+{'content': 'I love You !', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:24:59', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:24:59
+  I love You !
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  145
+ReceiveThread get buffer res:
+{'content': 'I love You !', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:25:13', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:25:13
+  I love You !
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  142
+ReceiveThread get buffer res:
+{'content': 'fuck you ', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 15:25:28', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 15:25:28
+  fuck you 
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  142
+ReceiveThread get buffer res:
+{'content': 'fuck you ', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 15:26:07', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 15:26:07
+  fuck you 
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  146
+ReceiveThread get buffer res:
+{'content': 'see you again', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 15:39:55', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 15:39:55
+  see you again
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  139
+ReceiveThread get buffer res:
+{'content': 'may be', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:40:03', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:40:03
+  may be
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  146
+ReceiveThread get buffer res:
+{'content': 'see you again', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 15:40:11', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 15:40:11
+  see you again
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  139
+ReceiveThread get buffer res:
+{'content': 'may be', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:40:16', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:40:16
+  may be
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  140
+ReceiveThread get buffer res:
+{'content': 'jjjjjjj', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:40:22', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:40:22
+  jjjjjjj
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  164
+ReceiveThread get buffer res:
+{'content': 'jjjjjjj撒大声地', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:40:26', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:40:26
+  jjjjjjj撒大声地
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  160
+ReceiveThread get buffer res:
+{'content': 'jashidhhaiulwhdnkwjasndkjak', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:40:50', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:40:50
+  jashidhhaiulwhdnkwjasndkjak
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  138
+ReceiveThread get buffer res:
+{'content': 'asdad', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 15:49:26', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 15:49:26
+  asdad
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  142
+ReceiveThread get buffer res:
+{'content': 'dnkjdnajd', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:49:31', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:49:31
+  dnkjdnajd
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  138
+ReceiveThread get buffer res:
+{'content': 'asdad', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 15:49:33', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 15:49:33
+  asdad
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  142
+ReceiveThread get buffer res:
+{'content': 'dnkjdnajd', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 15:49:35', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 15:49:35
+  dnkjdnajd
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  150
+ReceiveThread get buffer res:
+{'content': 'helllojsaidhasiud', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 16:09:08', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 16:09:08
+  helllojsaidhasiud
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  142
+ReceiveThread get buffer res:
+{'content': 'sjandiuas', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 16:09:19', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:09:19
+  sjandiuas
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  141
+ReceiveThread get buffer res:
+{'content': 'jiasojda', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 16:13:05', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:13:05
+  jiasojda
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  141
+ReceiveThread get buffer res:
+{'content': 'jiasojda', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 16:15:28', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:15:28
+  jiasojda
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  138
+ReceiveThread get buffer res:
+{'content': 'hello', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 16:17:48', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 16:17:48
+  hello
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  143
+ReceiveThread get buffer res:
+{'content': 'sandjkansd', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 16:18:28', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:18:28
+  sandjkansd
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  139
+ReceiveThread get buffer res:
+{'content': 'ajsids', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 16:42:04', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 16:42:04
+  ajsids
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  139
+ReceiveThread get buffer res:
+{'content': 'asdasd', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 16:42:11', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:42:11
+  asdasd
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  155
+ReceiveThread get buffer res:
+{'content': 'hello this is for test', 'receiver': 'laopo', 'sender': 'zhaoqifan', 'status': 0, 'timestamp': '2021-08-06 16:48:04', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  zhaoqifan
+ReceiveThread SYNC receiver =  laopo
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:48:04
+  hello this is for test
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+ReceiveThread buffersize =  144
+ReceiveThread get buffer res:
+{'content': 'Ok I Got It', 'receiver': 'zhaoqifan', 'sender': 'laopo', 'status': 0, 'timestamp': '2021-08-06 16:48:25', 'type': 3}
+ReceiveThread get a SYNC
+ReceiveThread SYNC sender =  laopo
+ReceiveThread SYNC receiver =  zhaoqifan
+ReceiveThread get newhistory :
+laopo 2021-08-06 16:48:25
+  Ok I Got It
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+[sinow@Arch IMfront]$ 

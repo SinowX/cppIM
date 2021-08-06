@@ -1,0 +1,61 @@
+[sinow@Arch IMfront]$ python main.py 
+_IceTransOpen: Unable to Parse address i3
+Qt: Session management error: Could not open network socket
+Receiver Thread init
+Receiver Thread init over
+MainThread init over
+MainThread running
+Login Btn Triggered
+trying lock login_mutex
+Login tcp connectServer
+Login Thread init
+Login Thread init over
+Login Thread running
+Login Thread login_info(bytes):
+b'{"username": "laopo", "password": "12345"}\x00'
+Login Thread login_info_size: c_uint(43)
+Login Thread Sent size and info
+Login Thread Get buffersize b'\x1e\x00\x00\x00'
+Login Thread recv buffersize : 30
+b'{\n\t"status" : 0,\n\t"type" : 0\n}'
+Login Thread get res:
+{
+	"status" : 0,
+	"type" : 0
+}
+Login Thread get res2: 
+{'status': 0, 'type': 0}
+Login Thread Success
+Login Thread Wake login_condi
+Login condi awaked
+Login Success
+Lui login btn disconnect()
+Lui hide()
+username =  laopo
+CUI show()
+login mutex unlock()
+ReceiveThread start
+ReceiveThread buffersize =  92
+ReceiveThread get buffer res:
+{'type': 1, 'sender': 'zhaoqifan', 'receiver': 'laopo', 'content': 'hello this is for test'}
+ReceiveThread get a P2PMSG
+ReceiveThread P2PMSG from  zhaoqifan
+ReceiveThread get newhistory :
+zhaoqifan 2021-08-06 16:48:05
+  hello this is for test
+ReceiveThread Updated history
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+ReceiveThread receiveSignal Emited
+MainThread Send Btn Triggered
+MainTread Send mutex trylock()
+MainTread SendMsg pack msg :
+{'type': 1, 'sender': 'laopo', 'receiver': 'zhaoqifan', 'content': 'Ok I Got It'}
+SendThread init
+SendThread init over
+SendThread send_msg = 
+b'{"type": 1, "sender": "laopo", "receiver": "zhaoqifan", "content": "Ok I Got It"}\x00'
+SendThread Msg has Sent
+UpdateHisDialog running
+UpdateHisDialog wakeAll()
+[sinow@Arch IMfront]$ 

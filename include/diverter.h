@@ -29,11 +29,8 @@
 class Diverter
 {
 public:
-    // 连接数据库，监听TCP连接，
     Diverter();
     ~Diverter();
-    
-
 private:
 
     void run_once();
@@ -42,8 +39,6 @@ private:
     userList *u_list;
     int listen_fd;
     DBMYSQL * m_db;
-
-
 };
 
 
