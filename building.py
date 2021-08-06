@@ -22,6 +22,9 @@ switch_condi = QWaitCondition()
 exit_mutex = QMutex()
 exit_condi = QWaitCondition()
 
+update_mutex = QMutex()
+update_condi = QWaitCondition()
+
 
 username:str = ''
 theother:str = ''
@@ -41,6 +44,7 @@ history:dict ={}
 
 
 class SendThread(QThread):
+    sendSignal = pyqtSignal(str)
     def __init__(self, msg:dict, ui: Chat_UI, TcpKeeper: Connector):
         print("SendThread init")
         super(SendThread, self).__init__()
@@ -58,7 +62,14 @@ class SendThread(QThread):
         self.TcpKeeper.sendMsg(send_msg_size)
         self.TcpKeeper.sendMsg(send_msg)
         print("SendThread Msg has Sent")
-        # newhistory:str = self.msg['sender']+" "+time.strftime("%m-%d %H:%M:%S",time.localtime())+"\n"+"  "+self.msg['content']
+
+        if theother not in history:
+            history[theother] = ''
+        # history[theother] = history[theother] + json.dumps(msg) + "\0"
+
+        newhistory:str = self.msg['sender']+" "+time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())+"\n"+"  "+self.msg['content']
+        history[theother] = history[theother] + "\n" +newhistory
+        self.sendSignal.emit(newhistory)
         # self.ui.history_dialog.append(newhistory)
         # global chatui
         # chatui.history_dialog.setPlainText(newhistory)
@@ -83,6 +94,7 @@ class HistoryThread(QThread):
         send_msg_size = c_uint32(len(send_msg))
         self.TcpKeeper.sendMsg(send_msg_size)
         self.TcpKeeper.sendMsg(send_msg)
+        history_condi.wakeAll()
         pass
 
 
@@ -147,10 +159,17 @@ class ReceiveThread(QThread):
         print("ReceiveThread start")
         m_theother: str =''
         while True:
+            try:
+                update_mutex.tryLock()
+            except IOError:
+                pass
+
             buffersize: bytes = self.TcpKeeper.recvMsg(cuint_32size)
             print("ReceiveThread buffersize = ", int.from_bytes(buffersize, 'little'))
             buffer: bytes = self.TcpKeeper.recvMsg(int.from_bytes(buffersize, 'little'))
             res: dict = json.loads(buffer.decode('utf-8'))
+            # time.sleep(3)
+            # res:dict = {'content':"asdnauid",'receiver':"laopo",'sender':'zhaoqifan','status':0,'timestamp':'2021-08-06 15:24:41','type':3}
             print("ReceiveThread get buffer res:")
             print(res)
             if res['type'] == P2PMSG:
@@ -162,8 +181,8 @@ class ReceiveThread(QThread):
                     continue
             elif res['type'] == SYNC:
                 print("ReceiveThread get a SYNC")
-                print("ReceiveThread SYNC sender = ",res['sender'])
-                print("ReceiveThread SYNC receiver = ",res['receiver'])
+                print("ReceiveThread SYNC sender = ", res['sender'])
+                print("ReceiveThread SYNC receiver = ", res['receiver'])
                 if res['sender'] == username:
                     m_theother = res['receiver']
                 else:
@@ -171,22 +190,26 @@ class ReceiveThread(QThread):
 
             if m_theother not in history:
                 history[m_theother]=''
-            newhistory = history[m_theother] + res['sender']+" "\
-                        +time.strftime("%m-%d %H:%M:%S",time.localtime())\
-                        +"\n"+"  "+res['content']
-            history[m_theother]=newhistory
+            if 'timestamp' in res:
+                newhistory = res['sender'] + " " \
+                             + res['timestamp'] \
+                             + "\n" + "  " + res['content']
+            else:
+                newhistory = res['sender']+" "\
+                            +time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())\
+                            +"\n"+"  "+res['content']
+            print("ReceiveThread get newhistory :")
+            print(newhistory)
+            history[m_theother]= history[m_theother] + "\n" + newhistory
             print("ReceiveThread Updated history")
             if m_theother == theother:
                 self.receiveSignal.emit(newhistory)
                 # self.ui.history_dialog.append(newhistory)
                 # self.ui.history_dialog.repaint()
+                update_condi.wait(update_mutex)
                 print("ReceiveThread receiveSignal Emited")
-
+            update_mutex.unlock()
         pass
-
-
-
-
 
 class MainThread(QThread):
     def __init__(self):
@@ -209,6 +232,7 @@ class MainThread(QThread):
         self.CUI.btn_exit.clicked.connect(self.Exit)
         self.CUI.hide()
         self.receiveKeeper = ReceiveThread(self.TcpKeeper,self.CUI)
+        self.receiveKeeper.receiveSignal.connect(self.UpdateHisDialog)
         print("MainThread init over")
         pass
 
@@ -245,7 +269,6 @@ class MainThread(QThread):
             self.CUI.name_myinfo.setText(username)
             self.CUI.show()
             print("CUI show()")
-            # self.receiveKeeper.receiveSignal(self.UpdateHisDialog)
             self.receiveKeeper.start()
 
         else:
@@ -256,8 +279,18 @@ class MainThread(QThread):
         pass
 
     def UpdateHisDialog(self,newhistory:str):
+
+        global update_condi
+        # try:
+        #     update_mutex.tryLock()
+        #     print("UpdateHisDialog trylock()")
+        # except IOError:
+        #     pass
         print("UpdateHisDialog running")
-        self.CUI.history_dialog.setPlainText(newhistory)
+        # self.CUI.history_dialog.setPlainText(newhistory)
+        self.CUI.history_dialog.append(newhistory+"\n")
+        update_condi.wakeAll()
+        print("UpdateHisDialog wakeAll()")
         pass
 
     def SendMsg(self):
@@ -276,25 +309,28 @@ class MainThread(QThread):
         print("MainTread SendMsg pack msg :")
         print(msg)
         send_thread = SendThread(msg, self.CUI, self.TcpKeeper)
+        send_thread.sendSignal.connect(self.UpdateHisDialog)
         send_thread.start()
 
         send_condi.wait(send_mutex)
-        if theother not in history:
-            history[theother] = ''
-        history[theother] = history[theother] + json.dumps(msg) + "\0"
+
 
         send_mutex.unlock()
         pass
 
     def GetHistory(self):
+        print("History Btn Triggered")
         global history_mutex
         try:
             history_mutex.tryLock()
         except IOError:
-            return
-        # global theother
-        # global username
+            pass
+
+
+        history[theother]=''
+        self.CUI.history_dialog.setPlainText('')
         msg = {'type':SYNC,'person1':username,'person2':theother}
+
         history_thread = HistoryThread(msg,self.CUI,self.TcpKeeper)
         history_thread.start()
         history_condi.wait(history_mutex)
