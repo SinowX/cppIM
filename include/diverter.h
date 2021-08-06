@@ -4,6 +4,7 @@
 #include<arpa/inet.h>
 #include<errno.h>
 #include<netinet/in.h>
+#include<sys/ioctl.h>
 #include<sys/socket.h>
 #include<sys/types.h>
 #include<sys/wait.h>

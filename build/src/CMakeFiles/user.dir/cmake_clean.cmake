@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "../../lib/libuser.pdb"
+  "../../lib/libuser.so"
   "CMakeFiles/user.dir/user.o"
   "CMakeFiles/user.dir/user.o.d"
-  "libuser.pdb"
-  "libuser.so"
 )
 
 # Per-language clean rules from dependency scanning.

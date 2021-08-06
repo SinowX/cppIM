@@ -12,13 +12,13 @@ DBMYSQL::DBMYSQL(const char*host,int port, const char* user,const char* passwd,c
         printf("DBMYSQL_mysql_real_connect(): %s\n",mysql_error(&handle));
         exit(-1);
     }
-    printf("Connect Success\n");
+    printf("Database Connect Success\n");
 }
 
 DBMYSQL::~DBMYSQL()
 {
     mysql_close(&handle);
-    printf("Close Success\n");
+    printf("Database Close Success\n");
 }
 
 int DBMYSQL::insert(const char* sql)

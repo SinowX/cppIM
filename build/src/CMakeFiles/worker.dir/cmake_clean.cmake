@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "../../lib/libworker.pdb"
+  "../../lib/libworker.so"
   "CMakeFiles/worker.dir/worker.o"
   "CMakeFiles/worker.dir/worker.o.d"
-  "libworker.pdb"
-  "libworker.so"
 )
 
 # Per-language clean rules from dependency scanning.

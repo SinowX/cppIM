@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "../../lib/libdtr.pdb"
+  "../../lib/libdtr.so"
   "CMakeFiles/dtr.dir/diverter.o"
   "CMakeFiles/dtr.dir/diverter.o.d"
-  "libdtr.pdb"
-  "libdtr.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "../../lib/libdb.pdb"
+  "../../lib/libdb.so"
   "CMakeFiles/db.dir/database.o"
   "CMakeFiles/db.dir/database.o.d"
-  "libdb.pdb"
-  "libdb.so"
 )
 
 # Per-language clean rules from dependency scanning.

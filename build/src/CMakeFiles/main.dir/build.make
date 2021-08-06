@@ -92,11 +92,11 @@ main_EXTERNAL_OBJECTS =
 
 ../bin/main: src/CMakeFiles/main.dir/main.o
 ../bin/main: src/CMakeFiles/main.dir/build.make
-../bin/main: src/libdtr.so
-../bin/main: src/libworker.so
-../bin/main: src/libutils.so
-../bin/main: src/libuser.so
-../bin/main: src/libdb.so
+../bin/main: ../lib/libdtr.so
+../bin/main: ../lib/libworker.so
+../bin/main: ../lib/libutils.so
+../bin/main: ../lib/libuser.so
+../bin/main: ../lib/libdb.so
 ../bin/main: src/CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sinow/workspace/cpp/IM/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/main"
 	cd /home/sinow/workspace/cpp/IM/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
