@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/main.dir/main.o -o ../../bin/main   -L/home/sinow/workspace/cpp/IM/lib  -Wl,-rpath,/home/sinow/workspace/cpp/IM/lib ../../lib/libdtr.so ../../lib/libworker.so ../../lib/libutils.so -ljsoncpp ../../lib/libuser.so ../../lib/libdb.so -lmysqlclient 

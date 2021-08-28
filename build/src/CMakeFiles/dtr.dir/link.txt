@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libdtr.so -o ../../lib/libdtr.so CMakeFiles/dtr.dir/diverter.o   -L/home/sinow/workspace/cpp/IM/lib  -Wl,-rpath,/home/sinow/workspace/cpp/IM/lib ../../lib/libworker.so ../../lib/libutils.so -ljsoncpp ../../lib/libuser.so ../../lib/libdb.so -lmysqlclient 

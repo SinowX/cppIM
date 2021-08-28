@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libdb.so -o ../../lib/libdb.so CMakeFiles/db.dir/database.o   -L/home/sinow/workspace/cpp/IM/lib  -Wl,-rpath,/home/sinow/workspace/cpp/IM/lib -lmysqlclient 
