@@ -1,0 +1,113 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "IMCPP",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "db::@145eef247bfb46b6828c",
+					"jsonFile" : "target-db-Debug-de3289436a0bc4adc7d0.json",
+					"name" : "db",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "dtr::@145eef247bfb46b6828c",
+					"jsonFile" : "target-dtr-Debug-a0d477334a7a9b91f0e1.json",
+					"name" : "dtr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "main::@145eef247bfb46b6828c",
+					"jsonFile" : "target-main-Debug-bf6d3a64d81d7ecd5ab9.json",
+					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "user::@145eef247bfb46b6828c",
+					"jsonFile" : "target-user-Debug-86d25818b7ca0b81e52d.json",
+					"name" : "user",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "utils::@145eef247bfb46b6828c",
+					"jsonFile" : "target-utils-Debug-1aa9815cb58a61b6c32f.json",
+					"name" : "utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "worker::@145eef247bfb46b6828c",
+					"jsonFile" : "target-worker-Debug-21b544c235da96d5d9b2.json",
+					"name" : "worker",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sinow/workspace/cpp/IM/build",
+		"source" : "/home/sinow/workspace/cpp/IM"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

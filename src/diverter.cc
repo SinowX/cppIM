@@ -48,8 +48,8 @@ void Diverter::initListenFd()
 
 void Diverter::initDB()
 {
-    m_db = new DBMYSQL("tdsqlshard-3l8qqete.sql.tencentcdb.com",
-        50,"remoter","Asd123456@","zqf");
+    m_db = new DBMYSQL("localhost",
+        3306,"remoter","asd123456","zqf");
     
 }
 

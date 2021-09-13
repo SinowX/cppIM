@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/sinow/workspace/cpp/IM/build",
+  "command": "/usr/bin/c++ -I/home/sinow/workspace/cpp/IM/include -g -o src/CMakeFiles/main.dir/main.o -c /home/sinow/workspace/cpp/IM/src/main.cc",
+  "file": "/home/sinow/workspace/cpp/IM/src/main.cc"
+},
+{
+  "directory": "/home/sinow/workspace/cpp/IM/build",
+  "command": "/usr/bin/c++ -Ddtr_EXPORTS -I/home/sinow/workspace/cpp/IM/include -g -fPIC -o src/CMakeFiles/dtr.dir/diverter.o -c /home/sinow/workspace/cpp/IM/src/diverter.cc",
+  "file": "/home/sinow/workspace/cpp/IM/src/diverter.cc"
+},
+{
+  "directory": "/home/sinow/workspace/cpp/IM/build",
+  "command": "/usr/bin/c++ -Dworker_EXPORTS -I/home/sinow/workspace/cpp/IM/include -g -fPIC -o src/CMakeFiles/worker.dir/worker.o -c /home/sinow/workspace/cpp/IM/src/worker.cc",
+  "file": "/home/sinow/workspace/cpp/IM/src/worker.cc"
+},
+{
+  "directory": "/home/sinow/workspace/cpp/IM/build",
+  "command": "/usr/bin/c++ -Ddb_EXPORTS -I/home/sinow/workspace/cpp/IM/include -g -fPIC -o src/CMakeFiles/db.dir/database.o -c /home/sinow/workspace/cpp/IM/src/database.cc",
+  "file": "/home/sinow/workspace/cpp/IM/src/database.cc"
+},
+{
+  "directory": "/home/sinow/workspace/cpp/IM/build",
+  "command": "/usr/bin/c++ -Duser_EXPORTS -I/home/sinow/workspace/cpp/IM/include -g -fPIC -o src/CMakeFiles/user.dir/user.o -c /home/sinow/workspace/cpp/IM/src/user.cc",
+  "file": "/home/sinow/workspace/cpp/IM/src/user.cc"
+},
+{
+  "directory": "/home/sinow/workspace/cpp/IM/build",
+  "command": "/usr/bin/c++ -Dutils_EXPORTS -I/home/sinow/workspace/cpp/IM/include -g -fPIC -o src/CMakeFiles/utils.dir/utils.o -c /home/sinow/workspace/cpp/IM/src/utils.cc",
+  "file": "/home/sinow/workspace/cpp/IM/src/utils.cc"
+}
+]
